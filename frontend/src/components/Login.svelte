@@ -51,7 +51,7 @@
         </svg>
       </div>
       <h1 class="text-2xl font-black text-[#1a2b6c] dark:text-white tracking-tight">
-        Digital Survey Portal
+        Online Survey App
       </h1>
       <p class="text-xs text-slate-500 dark:text-slate-400">
         Sign in to access your feedback dashboard and operations

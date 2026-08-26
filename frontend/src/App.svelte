@@ -561,7 +561,7 @@
 
                 {#if isSidebarExpanded}
                   <div class="flex items-center space-x-2.5 min-w-0 truncate">
-                    <div class="h-8 w-8 rounded-xl {isQrMode ? 'bg-cyan-600' : 'bg-[#1a2b6c]'} border border-rose-500/40 flex items-center justify-center font-extrabold text-white text-xs shadow-md shrink-0">
+                    <div class="h-8 w-8 rounded-xl bg-[#e31b23] border border-rose-500/40 flex items-center justify-center font-extrabold text-white text-xs shadow-md shrink-0">
                       {isQrMode ? 'QR' : 'EK'}
                     </div>
                     <span class="font-black text-sm tracking-tight text-white truncate">
@@ -572,11 +572,11 @@
               </div>
             </div>
 
-            <!-- NAVIGATION ITEMS -->
+            <!-- NAVIGATION ITEMS (UNIFIED RED ACTIVE STATE IN BOTH MODES) -->
             <nav class="p-3 space-y-2">
               {#if currentUser?.role === "admin"}
                 <button
-                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'surveys' ? (isQrMode ? 'bg-cyan-600 text-white shadow-md' : 'bg-[#1a2b6c] text-white shadow-md') : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
+                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'surveys' ? 'bg-[#e31b23] text-white shadow-md' : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
                   on:click={() => switchTab("surveys")}
                   title={isQrMode ? 'QR Forms Hub' : 'Surveys Portal'}
                 >
@@ -589,7 +589,7 @@
                 </button>
 
                 <button
-                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'builder' ? (isQrMode ? 'bg-cyan-600 text-white shadow-md' : 'bg-[#1a2b6c] text-white shadow-md') : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
+                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'builder' ? 'bg-[#e31b23] text-white shadow-md' : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
                   on:click={() => switchTab("builder")}
                   disabled={surveysList.length === 0}
                   title={isQrMode ? 'QR Form Designer' : 'Form Designer'}
@@ -605,7 +605,7 @@
 
               {#if currentUser?.role !== "site_leader" && currentUser?.role !== "kiosk_operator" && currentUser?.role !== "user"}
                 <button
-                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'kiosk' ? (isQrMode ? 'bg-cyan-600 text-white shadow-md' : 'bg-[#1a2b6c] text-white shadow-md') : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
+                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'kiosk' ? 'bg-[#e31b23] text-white shadow-md' : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
                   on:click={() => switchTab("kiosk")}
                   title={isQrMode ? "Preview QR Web Form" : "Live Kiosk Mode"}
                 >
@@ -619,7 +619,7 @@
               {/if}
 
               <button
-                class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'answers' ? (isQrMode ? 'bg-cyan-600 text-white shadow-md' : 'bg-[#1a2b6c] text-white shadow-md') : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
+                class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'answers' ? 'bg-[#e31b23] text-white shadow-md' : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
                 on:click={() => switchTab("answers")}
                 title="Answers Log"
               >
@@ -635,7 +635,7 @@
 
               {#if currentUser?.role === "admin" && !isQrMode}
                 <button
-                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'devices' ? 'bg-[#1a2b6c] text-white shadow-md' : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
+                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'devices' ? 'bg-[#e31b23] text-white shadow-md' : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
                   on:click={() => switchTab("devices")}
                   title="Device Management"
                 >
@@ -650,7 +650,7 @@
 
               {#if currentUser?.role === "admin"}
                 <button
-                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'users' ? (isQrMode ? 'bg-cyan-600 text-white shadow-md' : 'bg-[#e31b23] text-white shadow-md') : 'text-rose-400 hover:bg-white/10 hover:text-rose-300'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
+                  class="w-full flex items-center space-x-3 px-3.5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer {activeTab === 'users' ? 'bg-[#e31b23] text-white shadow-md' : 'text-slate-300 hover:bg-white/10 hover:text-white'} {isSidebarExpanded ? '' : 'justify-center px-0'}"
                   on:click={() => switchTab("users")}
                   title={isQrMode ? "Site Leader & Dynamic Site Control" : "Kiosk Operator Control"}
                 >
@@ -666,15 +666,10 @@
             </nav>
           </div>
 
-          {#if isSidebarExpanded}
-            <div class="p-4 theme-border border-t bg-black/10 text-[11px] text-slate-300 font-medium tracking-wide flex items-center justify-between">
-              <span class="truncate">Target: <strong class="text-white">{activeSurvey?.title || "None"}</strong></span>
-            </div>
-          {:else}
-            <div class="p-3 theme-border border-t bg-black/10 text-center">
-              <span class="h-2 w-2 rounded-full inline-block bg-[#e31b23] animate-pulse" title="System Active"></span>
-            </div>
-          {/if}
+          <!-- CLEAN FOOTER: TARGET TEXT REMOVED -->
+          <div class="p-3 theme-border border-t bg-black/10 text-center">
+            <span class="h-2 w-2 rounded-full inline-block bg-[#e31b23] animate-pulse" title="System Active"></span>
+          </div>
 
         </div>
       </aside>
@@ -688,7 +683,7 @@
           <div class="flex items-center space-x-3 min-w-0">
             {#if !isSidebarExpanded}
               <div class="flex items-center space-x-2 shrink-0 transition-all duration-300">
-                <div class="h-7 w-7 rounded-lg {isQrMode ? 'bg-cyan-600' : 'bg-[#1a2b6c]'} flex items-center justify-center font-extrabold text-xs text-white shadow-md">
+                <div class="h-7 w-7 rounded-lg bg-[#e31b23] flex items-center justify-center font-extrabold text-xs text-white shadow-md">
                   {isQrMode ? 'QR' : 'EK'}
                 </div>
                 <span class="font-bold text-sm tracking-tight theme-text-primary">
@@ -744,7 +739,7 @@
                 {:else}
                   <!-- PROFESSIONAL SUN SVG -->
                   <svg class="w-3.5 h-3.5 fill-current text-amber-500" viewBox="0 0 24 24">
-                    <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+                    <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0 0 1.41l1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
                   </svg>
                   <span class="theme-text-primary text-[11px] font-bold hidden md:inline">Light</span>
                 {/if}
@@ -756,7 +751,7 @@
                 <span class="theme-text-secondary truncate">User: <strong class="theme-text-primary">{currentUser.username}</strong></span>
                 <span 
                   class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase shrink-0"
-                  style={currentUser.role === 'admin' ? (isQrMode ? 'background-color: #0891b2 !important; color: #ffffff !important;' : 'background-color: #1a2b6c !important; color: #ffffff !important;') : 'background-color: #0284c7 !important; color: #ffffff !important;'}
+                  style={currentUser.role === 'admin' ? 'background-color: #e31b23 !important; color: #ffffff !important;' : 'background-color: #0284c7 !important; color: #ffffff !important;'}
                 >
                   {currentUser.role === 'site_leader' ? 'Site Leader' : (currentUser.role === 'user' ? 'Operator' : currentUser.role.replace('_', ' '))}
                 </span>

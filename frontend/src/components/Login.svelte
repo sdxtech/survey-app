@@ -43,18 +43,18 @@
 <div class="min-h-screen w-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex items-center justify-center p-4 box-border transition-colors duration-300">
   <div class="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 space-y-6 shadow-2xl backdrop-blur-xl">
     
-    <!-- BRANDING HEADER -->
+    <!-- BRANDING HEADER (UNIFIED) -->
     <div class="text-center space-y-2">
-      <div class="h-12 w-12 rounded-2xl bg-[#1a2b6c] flex items-center justify-center font-bold text-xl text-white shadow-lg mx-auto mb-2">
-        {isQrMode ? "QR" : "EK"}
+      <div class="h-12 w-12 rounded-2xl bg-[#1a2b6c] border border-rose-500/30 flex items-center justify-center font-bold text-xl text-white shadow-lg mx-auto mb-2">
+        <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+        </svg>
       </div>
       <h1 class="text-2xl font-black text-[#1a2b6c] dark:text-white tracking-tight">
-        {isQrMode ? "Web QR Survey Portal" : "Enterprise Kiosk Portal"}
+        Digital Survey Portal
       </h1>
       <p class="text-xs text-slate-500 dark:text-slate-400">
-        {isQrMode 
-          ? "Sign in with Site Leader or Admin credentials" 
-          : "Sign in with Kiosk Operator or Admin credentials"}
+        Sign in to access your feedback dashboard and operations
       </p>
     </div>
 
@@ -71,7 +71,7 @@
           id="username-input"
           type="text"
           bind:value={username}
-          placeholder={isQrMode ? "e.g. site_leader_north" : "e.g. kiosk_operator_1"}
+          placeholder="Enter username or operator ID"
           class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-[#1a2b6c] dark:text-white placeholder-slate-400 dark:placeholder-slate-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e31b23] transition-all font-mono"
         />
       </div>
@@ -120,7 +120,7 @@
     <!-- ADMIN CONTACT NOTICE -->
     <div class="pt-4 border-t border-slate-200 dark:border-slate-800/80 text-center space-y-1">
       <p class="text-[11px] text-slate-400 dark:text-slate-500">
-        {isQrMode ? "Need access to a specific site location?" : "Need operator credentials for a terminal?"}
+        Need operator or location credentials?
       </p>
       <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">
         Contact your <span class="text-[#e31b23] dark:text-rose-400 font-bold">System Administrator</span> to request access.
